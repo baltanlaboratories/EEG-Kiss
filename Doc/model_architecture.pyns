@@ -1,0 +1,52 @@
+# PynSource Version 1.1
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin.'}
+{'type':'umlshape', 'id':'DataGenerator', 'x':823, 'y':299, 'width':154, 'height':253, 'attrs':'blackboard|_pattern|_frequencies|_amplitudes|_noise|_offset|_Fs|_start_time|_processed_samples', 'meths':'__init__|process_step|start'}
+{'type':'umlshape', 'id':'ProcessingThread', 'x':817, 'y':130, 'width':186, 'height':31, 'attrs':'', 'meths':''}
+{'type':'umlshape', 'id':'DataSimulator', 'x':1358, 'y':79, 'width':194, 'height':493, 'attrs':'IDLE|PAUSED|PLAYING|blackboard|_patterns|_samples|_interval|_state|_sample_number|_index_offset|_start_time|_start', 'meths':'__init__|clear_data|set_simulation_data|set_simulation_interval|set_patterns|_check_values|start|pause|stop|is_data_set|get_simulation_state|process_step|get_total_time|get_current_time|set_time'}
+{'type':'umlshape', 'id':'HDFReader', 'x':1611, 'y':77, 'width':109, 'height':67, 'attrs':'', 'meths':'read'}
+{'type':'umlshape', 'id':'AbstractFilereader', 'x':1561, 'y':190, 'width':209, 'height':31, 'attrs':'', 'meths':''}
+{'type':'umlshape', 'id':'ImecInput', 'x':1028, 'y':262, 'width':194, 'height':717, 'attrs':'blackboard|_name|_port|_serial|_running|_timestamp_offset|_timestamp|_battery|_serial_state|last_time|total_time|last_second|start_time|byte_buffer', 'meths':'__init__|set_port|_parse_impedance_packet|_parse_eeg_packet|_parse_dc_offset|_parse_accelerometer|_parse_eeg_data|_parse_data|_parse_setting|_parse_remarks|_parse_set|_parse_enumerate|_parse_payload|process_step|_send_command|send_get_command|send_enumerate_command|send_set_command|send_startup_command|start|stop|set_time_offset|get_addresses|is_streaming|get_port|get_battery|get_serial_state'}
+{'type':'umlshape', 'id':'BasePlot', 'x':648, 'y':481, 'width':154, 'height':269, 'attrs':'blackboard|_patterns|ax|changed|_plotbuffer|_plotlength', 'meths':'__init__|_update_ax|show|_process_plot_data|_process_data|reset|plotConfig'}
+{'type':'umlshape', 'id':'DataConsumer', 'x':449, 'y':300, 'width':142, 'height':31, 'attrs':'', 'meths':''}
+{'type':'umlshape', 'id':'FileRecorder', 'x':174, 'y':483, 'width':142, 'height':285, 'attrs':'_channels|_types|_writer|_recording|_filename|_samples|_start', 'meths':'__init__|reset|start_recording|stop_recording|_process_data|set_filename|is_recording'}
+{'type':'umlshape', 'id':'IMECWriter', 'x':175, 'y':777, 'width':170, 'height':157, 'attrs':'writeFile', 'meths':'__init__|createEEGFile|_setSignalAttributes|write|closefile'}
+{'type':'umlshape', 'id':'SignalPlot', 'x':648, 'y':760, 'width':154, 'height':221, 'attrs':'colors|xLim|ymin|ymax|_x', 'meths':'__init__|_update_ax|_process_plot_data|reset|plotConfig'}
+{'type':'umlshape', 'id':'Blackboard', 'x':1386, 'y':645, 'width':138, 'height':221, 'attrs':'buffers', 'meths':'__init__|_check|put_data|get_data|get_timestamps|get_patterns|get_count|clear|set_bufferlength'}
+{'type':'umlshape', 'id':'BlackboardBuffer', 'x':1362, 'y':895, 'width':186, 'height':31, 'attrs':'', 'meths':''}
+{'type':'umlshape', 'id':'States', 'x':117, 'y':204, 'width':76, 'height':83, 'attrs':'IDLE|BUSY', 'meths':''}
+{'type':'umlshape', 'id':'Markers', 'x':120, 'y':91, 'width':90, 'height':99, 'attrs':'KISS_STOP|KISS_START|POI', 'meths':''}
+{'type':'umlshape', 'id':'CoreTime', 'x':536, 'y':88, 'width':98, 'height':125, 'attrs':'instance', 'meths':'__new__|__getattr__|__setattr__'}
+{'type':'umlshape', 'id':'__CoreTime', 'x':400, 'y':90, 'width':120, 'height':141, 'attrs':'_offset', 'meths':'__init__|__str__|reset|now'}
+{'type':'umlshape', 'id':'FFTAnalyzer', 'x':495, 'y':539, 'width':131, 'height':173, 'attrs':'blackboard|buffers|_windowsize|_samplerate', 'meths':'__init__|_process_data|_getFFT'}
+{'type':'umlshape', 'id':'FIRFilter', 'x':341, 'y':542, 'width':138, 'height':157, 'attrs':'_pat_extension|_coefficients|_buffer', 'meths':'__init__|_process_data|get_coefficients'}
+{'type':'edge', 'id':'DataGenerator_to_ProcessingThread', 'source':'DataGenerator', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'DataGenerator_to_ProcessingThread', 'source':'DataGenerator', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'DataSimulator_to_ProcessingThread', 'source':'DataSimulator', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'DataGenerator_to_ProcessingThread', 'source':'DataGenerator', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'DataSimulator_to_ProcessingThread', 'source':'DataSimulator', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'HDFReader_to_AbstractFilereader', 'source':'HDFReader', 'target':'AbstractFilereader', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'DataGenerator_to_ProcessingThread', 'source':'DataGenerator', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'DataSimulator_to_ProcessingThread', 'source':'DataSimulator', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'HDFReader_to_AbstractFilereader', 'source':'HDFReader', 'target':'AbstractFilereader', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'ImecInput_to_ProcessingThread', 'source':'ImecInput', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FileRecorder_to_DataConsumer', 'source':'FileRecorder', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FileRecorder_to_DataConsumer', 'source':'FileRecorder', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FileRecorder_to_DataConsumer', 'source':'FileRecorder', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'SignalPlot_to_BasePlot', 'source':'SignalPlot', 'target':'BasePlot', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'DataConsumer_to_ProcessingThread', 'source':'DataConsumer', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'DataConsumer_to_ProcessingThread', 'source':'DataConsumer', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'DataConsumer_to_ProcessingThread', 'source':'DataConsumer', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'FFTAnalyzer_to_DataConsumer', 'source':'FFTAnalyzer', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FFTAnalyzer_to_DataConsumer', 'source':'FFTAnalyzer', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FIRFilter_to_DataConsumer', 'source':'FIRFilter', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}

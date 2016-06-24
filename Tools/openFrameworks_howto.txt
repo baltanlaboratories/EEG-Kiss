@@ -1,0 +1,27 @@
+Experiment with new library: "openframeworks" [openframeworks.cc]
+To see if it can be used to create visualisations of EEG signal obtained by the EEG-kiss application. Needs to have support for ""opensound control".
+
+- Download release 0.8.4 for Windows code::blocks (http://www.openframeworks.cc/versions/v0.8.4/of_v0.8.4_win_cb_release.zip)
+- Extract to: "C:\Data\Projects\eeg-kiss\of_v0.8.4_win_cb_release"
+- Read file "..\INSTALL.md"
+- Follow steps on "http://www.openframeworks.cc/setup/codeblocks":
+    * download from [http://fossies.org/windows/misc/codeblocks-13.12mingw-setup.exe/] i.s.o. indicated link (to prevent unnecessary add-ons)
+    * install code blocks IDE: full options (may check shortcut generation settings)
+    * a popup appears for selecting default compiler, default GNUCC is Ok (?)
+    * after first launch you probably don't want the IDE to change file associations
+    * download additions here: http://www.openframeworks.cc/content/files/codeblocks_additions.zip
+    * and follow the steps from the included readme-file:
+        - add the contents of the folder "add_to_codeblocks_mingw_include" into "C:\Program Files (x86)\CodeBlocks\MinGW\include" (or wherever your app\mingw\include is)
+        - add the contents of the folder "add_to_codeblocks_mingw_lib" into "C:\Program Files (x86)\CodeBlocks\MinGW\lib"(or wherever your app\mingw\lib is)
+
+Here you can find the "Getting Started" turtorial:
+http://openframeworks.cc/tutorials/introduction/001_chapter1.html
+
+The easiest way to start a new project is to use the "projectGenerator", see:
+http://openframeworks.cc/tutorials/introduction/002_projectGenerator.html
+
+Help for installig addons can be found here:
+https://github.com/openframeworks/openFrameworks/wiki
+
+And here you can find a huge collection of addons:
+http://www.ofxaddons.com

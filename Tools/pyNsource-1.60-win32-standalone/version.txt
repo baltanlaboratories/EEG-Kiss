@@ -1,0 +1,12 @@
+Path: .
+Working Copy Root Path: E:\Devel_Andy\pyNsource
+URL: https://pynsource.googlecode.com/svn/trunk
+Repository Root: https://pynsource.googlecode.com/svn
+Repository UUID: 6461a6f0-73df-cf69-53d8-f1e9cabed33a
+Revision: 561
+Node Kind: directory
+Schedule: normal
+Last Changed Author: abulka@gmail.com
+Last Changed Rev: 561
+Last Changed Date: 2012-08-30 15:13:54 +1000 (Thu, 30 Aug 2012)
+

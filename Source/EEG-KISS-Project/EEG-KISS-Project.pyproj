@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73248897-7be5-4261-8fda-a6bcc84d77e5}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>setup.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>{66893dfd-152b-4bdb-80be-e555afc5701b}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <Environment>PYTHONPATH=C:\Tom\git\eeg-kiss\Source\EEG-KISS-Project</Environment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="headset_simulator\serial_print.py" />
+    <Compile Include="headset_simulator\serial_simulator.py" />
+    <Compile Include="headset_simulator\simConstants.py" />
+    <Compile Include="headset_simulator\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\connectivity\bluetooth_connection.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\connectivity\serial_connection.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\connectivity\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\blackboard.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\blackboardbuffer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\circularbuffer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\constants.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\coretime.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\dataconsumer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\fftconsumer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\observerpattern.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\ordinarybuffer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\processingthread.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\settings.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\syncdataconsumer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\core\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\gui\applicationcontroller.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\gui\applicationmain.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\gui\applicationmodel.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\gui\applicationview.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\gui\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\input\abstractfilereader.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\input\datagenerator.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\input\datasimulator.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\input\hdfreader.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\input\imecinput.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\input\timedsimulator.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\input\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\baseplot.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\filerecorder.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\imecwriter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\oscwriter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\signalplot.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\spectrumsignalplot.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\timedsignalplot.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\output\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\arousalprocessing.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\fftanalyzer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\firfilter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\firpreprocessing.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\iirbandpassfilter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\iirfilter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\iirlowpassfilter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\iirnotchfilter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\processing\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\args\args_spike.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\args\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\bandpassfilterspike.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\data_converter\data_converter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\data_converter\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\data_simulator_plot\dummyplotwidget.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\data_simulator_plot\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\filtering\filter_spike.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\freqanalysis\fft_spike.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\freqanalysis\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\input\udp_imec_input.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\input\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\logging\log_spike.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\osc\rcv.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\osc\send.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\plotting\animation_tkinter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\plotting\f_spectrum.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\plotting\specplot.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\plotting\spectogram.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\plotting\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\regedit\RegisterPy.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\regedit\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\tkinter\drop_down_spike.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\tkinter\on_destroy_test.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\tkinter\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\spikes\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\version.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\root\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\connectivity\test_bluetooth.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\connectivity\test_serial_connection.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\connectivity\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\test_blackboard.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\test_blackboardbuffer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\test_coretime.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\test_dataconsumer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\test_observerpattern.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\test_ordinary_buffer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\test_processingthread.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\core\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\gui\test_applicationcontroller.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\gui\test_applicationmodel.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\gui\test_applicationmodel_recording.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\gui\test_applicationmodel_simulating.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\gui\test_applicationmodel_streaming.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\gui\test_applicationview.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\gui\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\input\test_datasimulator.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\input\test_hdfreader.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\input\test_imecinput.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\input\test_timedsimulator.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\input\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\output\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\processing\test_fftanalyzer.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\processing\test_firfilter.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\processing\test_preprocessing.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\processing\__init__.py" />
+    <Compile Include="PythonApplication1\PythonApplication1\tests\__init__.py" />
+    <Compile Include="root\connectivity\bluetooth_connection.py" />
+    <Compile Include="root\connectivity\serial_connection.py" />
+    <Compile Include="root\connectivity\__init__.py" />
+    <Compile Include="root\core\blackboard.py" />
+    <Compile Include="root\core\blackboardbuffer.py" />
+    <Compile Include="root\core\circularbuffer.py" />
+    <Compile Include="root\core\constants.py" />
+    <Compile Include="root\core\coretime.py" />
+    <Compile Include="root\core\dataconsumer.py" />
+    <Compile Include="root\core\fftconsumer.py" />
+    <Compile Include="root\core\observerpattern.py" />
+    <Compile Include="root\core\ordinarybuffer.py" />
+    <Compile Include="root\core\processingthread.py" />
+    <Compile Include="root\core\settings.py" />
+    <Compile Include="root\core\syncdataconsumer.py" />
+    <Compile Include="root\core\__init__.py" />
+    <Compile Include="root\gui\applicationcontroller.py" />
+    <Compile Include="root\gui\applicationmain.py" />
+    <Compile Include="root\gui\applicationmodel.py" />
+    <Compile Include="root\gui\applicationview.py" />
+    <Compile Include="root\gui\__init__.py" />
+    <Compile Include="root\input\abstractfilereader.py" />
+    <Compile Include="root\input\datagenerator.py" />
+    <Compile Include="root\input\datasimulator.py" />
+    <Compile Include="root\input\hdfreader.py" />
+    <Compile Include="root\input\imecinput.py" />
+    <Compile Include="root\input\timedsimulator.py" />
+    <Compile Include="root\input\__init__.py" />
+    <Compile Include="root\output\baseplot.py" />
+    <Compile Include="root\output\filerecorder.py" />
+    <Compile Include="root\output\imecwriter.py" />
+    <Compile Include="root\output\oscwriter.py" />
+    <Compile Include="root\output\signalplot.py" />
+    <Compile Include="root\output\spectrumsignalplot.py" />
+    <Compile Include="root\output\timedsignalplot.py" />
+    <Compile Include="root\output\__init__.py" />
+    <Compile Include="root\processing\arousalprocessing.py" />
+    <Compile Include="root\processing\fftanalyzer.py" />
+    <Compile Include="root\processing\firfilter.py" />
+    <Compile Include="root\processing\firpreprocessing.py" />
+    <Compile Include="root\processing\iirbandpassfilter.py" />
+    <Compile Include="root\processing\iirfilter.py" />
+    <Compile Include="root\processing\iirlowpassfilter.py" />
+    <Compile Include="root\processing\iirnotchfilter.py" />
+    <Compile Include="root\processing\__init__.py" />
+    <Compile Include="root\spikes\args\args_spike.py" />
+    <Compile Include="root\spikes\args\__init__.py" />
+    <Compile Include="root\spikes\bandpassfilterspike.py" />
+    <Compile Include="root\spikes\data_converter\data_converter.py" />
+    <Compile Include="root\spikes\data_converter\__init__.py" />
+    <Compile Include="root\spikes\data_simulator_plot\dummyplotwidget.py" />
+    <Compile Include="root\spikes\data_simulator_plot\__init__.py" />
+    <Compile Include="root\spikes\filtering\filter_spike.py" />
+    <Compile Include="root\spikes\freqanalysis\fft_spike.py" />
+    <Compile Include="root\spikes\freqanalysis\__init__.py" />
+    <Compile Include="root\spikes\input\udp_imec_input.py" />
+    <Compile Include="root\spikes\input\__init__.py" />
+    <Compile Include="root\spikes\logging\log_spike.py" />
+    <Compile Include="root\spikes\osc\rcv.py" />
+    <Compile Include="root\spikes\osc\send.py" />
+    <Compile Include="root\spikes\plotting\animation_tkinter.py" />
+    <Compile Include="root\spikes\plotting\f_spectrum.py" />
+    <Compile Include="root\spikes\plotting\specplot.py" />
+    <Compile Include="root\spikes\plotting\spectogram.py" />
+    <Compile Include="root\spikes\plotting\__init__.py" />
+    <Compile Include="root\spikes\regedit\RegisterPy.py" />
+    <Compile Include="root\spikes\regedit\__init__.py" />
+    <Compile Include="root\spikes\tkinter\drop_down_spike.py" />
+    <Compile Include="root\spikes\tkinter\on_destroy_test.py" />
+    <Compile Include="root\spikes\tkinter\__init__.py" />
+    <Compile Include="root\spikes\__init__.py" />
+    <Compile Include="root\version.py" />
+    <Compile Include="root\__init__.py" />
+    <Compile Include="setup.py" />
+    <Compile Include="source\conf.py" />
+    <Compile Include="tests\connectivity\test_bluetooth.py" />
+    <Compile Include="tests\connectivity\test_serial_connection.py" />
+    <Compile Include="tests\connectivity\__init__.py" />
+    <Compile Include="tests\core\test_spectrumsettings.py" />
+    <Compile Include="tests\core\test_frequencybandsettings.py" />
+    <Compile Include="tests\core\test_timesettings.py" />
+    <Compile Include="tests\core\test_blackboard.py" />
+    <Compile Include="tests\core\test_blackboardbuffer.py" />
+    <Compile Include="tests\core\test_coretime.py" />
+    <Compile Include="tests\core\test_dataconsumer.py" />
+    <Compile Include="tests\core\test_observerpattern.py" />
+    <Compile Include="tests\core\test_ordinary_buffer.py" />
+    <Compile Include="tests\core\test_processingthread.py" />
+    <Compile Include="tests\core\__init__.py" />
+    <Compile Include="tests\gui\test_applicationcontroller.py" />
+    <Compile Include="tests\gui\test_applicationmodel.py" />
+    <Compile Include="tests\gui\test_applicationmodel_recording.py" />
+    <Compile Include="tests\gui\test_applicationmodel_simulating.py" />
+    <Compile Include="tests\gui\test_applicationmodel_streaming.py" />
+    <Compile Include="tests\gui\test_applicationview.py" />
+    <Compile Include="tests\gui\__init__.py" />
+    <Compile Include="tests\input\test_datasimulator.py" />
+    <Compile Include="tests\input\test_hdfreader.py" />
+    <Compile Include="tests\input\test_imecinput.py" />
+    <Compile Include="tests\input\test_timedsimulator.py" />
+    <Compile Include="tests\input\__init__.py" />
+    <Compile Include="tests\output\test_baseplot.py" />
+    <Compile Include="tests\output\__init__.py" />
+    <Compile Include="tests\processing\test_fftanalyzer.py" />
+    <Compile Include="tests\processing\test_firfilter.py" />
+    <Compile Include="tests\processing\test_arousalprocessor.py" />
+    <Compile Include="tests\processing\test_preprocessing.py" />
+    <Compile Include="tests\processing\__init__.py" />
+    <Compile Include="tests\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build\index.html" />
+    <Content Include="build\_static\ajax-loader.gif" />
+    <Content Include="build\_static\basic.css" />
+    <Content Include="build\_static\comment-bright.png" />
+    <Content Include="build\_static\comment-close.png" />
+    <Content Include="build\_static\comment.png" />
+    <Content Include="build\_static\default.css" />
+    <Content Include="build\_static\doctools.js" />
+    <Content Include="build\_static\down-pressed.png" />
+    <Content Include="build\_static\down.png" />
+    <Content Include="build\_static\file.png" />
+    <Content Include="build\_static\jquery.js" />
+    <Content Include="build\_static\minus.png" />
+    <Content Include="build\_static\plus.png" />
+    <Content Include="build\_static\pygments.css" />
+    <Content Include="build\_static\searchtools.js" />
+    <Content Include="build\_static\sidebar.js" />
+    <Content Include="build\_static\underscore.js" />
+    <Content Include="build\_static\up-pressed.png" />
+    <Content Include="build\_static\up.png" />
+    <Content Include="build\_static\websupport.js" />
+    <Content Include="headset_simulator\README.txt" />
+    <Content Include="icons\EEG_Kiss_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build" />
+    <Folder Include="build\_static" />
+    <Folder Include="headset_simulator" />
+    <Folder Include="icons" />
+    <Folder Include="PythonApplication1\" />
+    <Folder Include="PythonApplication1\PythonApplication1\" />
+    <Folder Include="PythonApplication1\PythonApplication1\root" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\connectivity" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\core" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\gui" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\input" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\output" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\processing" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\args" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\data_converter" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\data_simulator_plot" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\filtering" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\freqanalysis" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\input" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\logging" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\osc" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\plotting" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\regedit" />
+    <Folder Include="PythonApplication1\PythonApplication1\root\spikes\tkinter" />
+    <Folder Include="PythonApplication1\PythonApplication1\tests" />
+    <Folder Include="PythonApplication1\PythonApplication1\tests\connectivity" />
+    <Folder Include="PythonApplication1\PythonApplication1\tests\core" />
+    <Folder Include="PythonApplication1\PythonApplication1\tests\gui" />
+    <Folder Include="PythonApplication1\PythonApplication1\tests\input" />
+    <Folder Include="PythonApplication1\PythonApplication1\tests\output" />
+    <Folder Include="PythonApplication1\PythonApplication1\tests\processing" />
+    <Folder Include="root" />
+    <Folder Include="root\connectivity" />
+    <Folder Include="root\core" />
+    <Folder Include="root\gui" />
+    <Folder Include="root\input" />
+    <Folder Include="root\output" />
+    <Folder Include="root\processing" />
+    <Folder Include="root\spikes" />
+    <Folder Include="root\spikes\args" />
+    <Folder Include="root\spikes\data_converter" />
+    <Folder Include="root\spikes\data_simulator_plot" />
+    <Folder Include="root\spikes\filtering" />
+    <Folder Include="root\spikes\freqanalysis" />
+    <Folder Include="root\spikes\input" />
+    <Folder Include="root\spikes\logging" />
+    <Folder Include="root\spikes\osc" />
+    <Folder Include="root\spikes\plotting" />
+    <Folder Include="root\spikes\regedit" />
+    <Folder Include="root\spikes\tkinter" />
+    <Folder Include="source" />
+    <Folder Include="tests" />
+    <Folder Include="tests\connectivity" />
+    <Folder Include="tests\core" />
+    <Folder Include="tests\gui" />
+    <Folder Include="tests\input" />
+    <Folder Include="tests\output" />
+    <Folder Include="tests\processing" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{66893dfd-152b-4bdb-80be-e555afc5701b}\2.7" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>

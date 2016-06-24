@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//root/input/abstractfilereader.py=utf-8
+encoding//root/input/hdfreader.py=utf-8
+encoding//root/spikes/bandpassfilterspike.py=utf-8
+encoding//root/spikes/tkinter/drop_down_spike.py=utf-8

@@ -1,0 +1,35 @@
+# PynSource Version 1.1
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin.'}
+{'type':'umlshape', 'id':'Blackboard', 'x':516, 'y':105, 'width':138, 'height':221, 'attrs':'buffers|_', 'meths':'__init__|_check|put_data|get_data|get_patterns|get_count|clear|set_bufferlength'}
+{'type':'umlshape', 'id':'BlackboardBuffer', 'x':492, 'y':35, 'width':186, 'height':31, 'attrs':'', 'meths':''}
+{'type':'umlshape', 'id':'DataConsumer', 'x':873, 'y':146, 'width':142, 'height':157, 'attrs':'_blackboard|_patterns|_counters', 'meths':'__init__|_process_data|process_step'}
+{'type':'umlshape', 'id':'ProcessingThread', 'x':851, 'y':34, 'width':186, 'height':31, 'attrs':'', 'meths':''}
+{'type':'umlshape', 'id':'AbstractFilereader', 'x':26, 'y':27, 'width':209, 'height':67, 'attrs':'', 'meths':'read'}
+{'type':'umlshape', 'id':'DataSimulator', 'x':23, 'y':245, 'width':194, 'height':381, 'attrs':'IDLE|PAUSED|PLAYING|_blackboard|_patterns|_data|_interval|_state|_sample_number|show|_start|_index_offset', 'meths':'__init__|set_simulation_data|set_simulation_interval|set_patterns|start|pause|stop|_simulate_data'}
+{'type':'umlshape', 'id':'HDFReader', 'x':77, 'y':161, 'width':104, 'height':67, 'attrs':'', 'meths':'read'}
+{'type':'umlshape', 'id':'ImecInput', 'x':248, 'y':246, 'width':194, 'height':509, 'attrs':'_blackboard|_name|_port|_serial|_running', 'meths':'__init__|set_port|_parse_impedance_packet|_parse_eeg_packet|_parse_dc_offset|_parse_accelerometer|_parse_eeg_data|_parse_data|_parse_setting|_parse_remarks|_parse_set|_parse_enumerate|_parse_payload|_start_receiving_data|_send_command|send_get_command|send_enumerate_command|send_set_command|send_startup_command|start|stop|get_addresses|get_port'}
+{'type':'umlshape', 'id':'BasePlot', 'x':1132, 'y':420, 'width':154, 'height':269, 'attrs':'_blackboard|_patterns|ax|changed|_plotbuffer|_plotlength', 'meths':'__init__|_update_ax|show|_process_plot_data|_process_data|reset|plotConfig'}
+{'type':'umlshape', 'id':'HDF5Recorder', 'x':529, 'y':421, 'width':142, 'height':269, 'attrs':'_channels|types|_recording|_filename|_data|_start', 'meths':'__init__|reset|start_recording|stop_recording|_process_data|set_filename|is_recording'}
+{'type':'umlshape', 'id':'HDF5Writer', 'x':525, 'y':717, 'width':170, 'height':157, 'attrs':'writeFile', 'meths':'__init__|createEEGFile|_setSignalAttributes|write|closefile'}
+{'type':'umlshape', 'id':'SignalPlot', 'x':1132, 'y':716, 'width':154, 'height':205, 'attrs':'colors|ymin|ymax|_x', 'meths':'__init__|_update_ax|_process_plot_data|reset|plotConfig'}
+{'type':'umlshape', 'id':'FIRPreprocessing', 'x':726, 'y':420, 'width':186, 'height':157, 'attrs':'coefLPF256|coefBSF256|buffer1|buffer2', 'meths':'__init__|_process_data'}
+{'type':'umlshape', 'id':'FreqSpectrum', 'x':938, 'y':422, 'width':143, 'height':173, 'attrs':'_blackboard|buffers|_windowsize|_samplerate', 'meths':'__init__|_process_data|_getFFT'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'DataConsumer_to_ProcessingThread', 'source':'DataConsumer', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'DataConsumer_to_ProcessingThread', 'source':'DataConsumer', 'target':'ProcessingThread', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BlackboardBuffer_to_Blackboard', 'source':'BlackboardBuffer', 'target':'Blackboard', 'uml_edge_type':'composition'}
+{'type':'edge', 'id':'HDFReader_to_AbstractFilereader', 'source':'HDFReader', 'target':'AbstractFilereader', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'HDFReader_to_AbstractFilereader', 'source':'HDFReader', 'target':'AbstractFilereader', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'HDF5Recorder_to_DataConsumer', 'source':'HDF5Recorder', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'HDF5Recorder_to_DataConsumer', 'source':'HDF5Recorder', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'BasePlot_to_DataConsumer', 'source':'BasePlot', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'HDF5Recorder_to_DataConsumer', 'source':'HDF5Recorder', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'SignalPlot_to_BasePlot', 'source':'SignalPlot', 'target':'BasePlot', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FIRPreprocessing_to_DataConsumer', 'source':'FIRPreprocessing', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FIRPreprocessing_to_DataConsumer', 'source':'FIRPreprocessing', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
+{'type':'edge', 'id':'FreqSpectrum_to_DataConsumer', 'source':'FreqSpectrum', 'target':'DataConsumer', 'uml_edge_type':'generalisation'}
