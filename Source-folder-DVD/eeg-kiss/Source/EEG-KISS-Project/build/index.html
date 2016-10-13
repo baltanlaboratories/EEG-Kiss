@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>eeg-kiss 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="None" href="index.html#document-index" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.html#document-index">eeg-kiss 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-eeg-kiss-s-documentation">
+<h1>Welcome to eeg-kiss&#8217;s documentation!<a class="headerlink" href="#welcome-to-eeg-kiss-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<span id="document-root"></span><div class="section" id="root-package">
+<h2>root package<a class="headerlink" href="#root-package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="subpackages">
+<h3>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<span id="document-root.data"></span><div class="section" id="root-data-package">
+<h4>root.data package<a class="headerlink" href="#root-data-package" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="module-root.data">
+<span id="module-contents"></span><h5>Module contents<a class="headerlink" href="#module-root.data" title="Permalink to this headline">¶</a></h5>
+<p>Creates a list of paired HDF5 data filenames.
+Data is provided by Baltan Laboratories</p>
+<p>The member &#8216;filenames&#8217; is a 13x2 list containing all the filenames</p>
+<p>The filenames are automatically converted to full filepaths</p>
+</div>
+</div>
+<span id="document-root.input"></span><div class="section" id="root-input-package">
+<h4>root.input package<a class="headerlink" href="#root-input-package" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="submodules">
+<h5>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="module-root.input.abstractfilereader">
+<span id="root-input-abstractfilereader-module"></span><h5>root.input.abstractfilereader module<a class="headerlink" href="#module-root.input.abstractfilereader" title="Permalink to this headline">¶</a></h5>
+<p>Abstract filereader as interface class meant for serve as a basis for multiple data input units.
+Every filereader will at least have one method &#8216;read()&#8217;.
+The filereaders will be used to load pre-recorded data from disk for offline analysis or data simulations.</p>
+<dl class="class">
+<dt id="root.input.abstractfilereader.AbstractFilereader">
+<em class="property">class </em><tt class="descclassname">root.input.abstractfilereader.</tt><tt class="descname">AbstractFilereader</tt><a class="reference internal" href="_modules/root/input/abstractfilereader.html#AbstractFilereader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.input.abstractfilereader.AbstractFilereader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="root.input.abstractfilereader.AbstractFilereader.read">
+<em class="property">static </em><tt class="descname">read</tt><big>(</big><em>filename</em><big>)</big><a class="reference internal" href="_modules/root/input/abstractfilereader.html#AbstractFilereader.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.input.abstractfilereader.AbstractFilereader.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-root.input.hdfreader">
+<span id="root-input-hdfreader-module"></span><h5>root.input.hdfreader module<a class="headerlink" href="#module-root.input.hdfreader" title="Permalink to this headline">¶</a></h5>
+<p>The HDF reader is used to read the HDF5 files that were provided by Baltan Laboratories and that are included in the &#8216;data&#8217; package.</p>
+<p>The file is parsed using the h5py library.</p>
+<dl class="class">
+<dt id="root.input.hdfreader.HDFReader">
+<em class="property">class </em><tt class="descclassname">root.input.hdfreader.</tt><tt class="descname">HDFReader</tt><a class="reference internal" href="_modules/root/input/hdfreader.html#HDFReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.input.hdfreader.HDFReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#root.input.abstractfilereader.AbstractFilereader" title="root.input.abstractfilereader.AbstractFilereader"><tt class="xref py py-class docutils literal"><span class="pre">root.input.abstractfilereader.AbstractFilereader</span></tt></a></p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="root.input.hdfreader.HDFReader.read">
+<tt class="descname">read</tt><big>(</big><em>filename</em>, <em>print_info=False</em><big>)</big><a class="reference internal" href="_modules/root/input/hdfreader.html#HDFReader.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.input.hdfreader.HDFReader.read" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename:</strong></p>
+<blockquote>
+<div><p>Will read the file corresponding to the given filename.</p>
+<p>This file is assumed to be an HDF5 file of the correct format.</p>
+</div></blockquote>
+<p><strong>print_info:</strong></p>
+<blockquote>
+<div><p>Prints metadata from the HDF5 file if set to True</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">mat:</p>
+<blockquote>
+<div><p>matrix with data for all channels for six types of data</p>
+</div></blockquote>
+<p>frequencies:</p>
+<blockquote class="last">
+<div><p>vector of frequency values for each data type</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-root.input">
+<span id="module-contents"></span><h5>Module contents<a class="headerlink" href="#module-root.input" title="Permalink to this headline">¶</a></h5>
+<p>The input package contains all input modules for the EEG-Kiss framework. 
+These modules contain both offline as online data sources.
+Offline data sources include filereaders such that data can be loaded from the hard disk.
+Online data sources are streams of data, for instance from an EEG headset or online sources.</p>
+</div>
+</div>
+<span id="document-root.spikes"></span><div class="section" id="root-spikes-package">
+<h4>root.spikes package<a class="headerlink" href="#root-spikes-package" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="subpackages">
+<h5>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h5>
+<div class="toctree-wrapper compound">
+<span id="document-root.spikes.data_simulator_plot"></span><div class="section" id="root-spikes-data-simulator-plot-package">
+<h6>root.spikes.data_simulator_plot package<a class="headerlink" href="#root-spikes-data-simulator-plot-package" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="submodules">
+<h7>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h7>
+</div>
+<div class="section" id="module-root.spikes.data_simulator_plot.oscdatamain">
+<span id="root-spikes-data-simulator-plot-oscdatamain-module"></span><h7>root.spikes.data_simulator_plot.oscdatamain module<a class="headerlink" href="#module-root.spikes.data_simulator_plot.oscdatamain" title="Permalink to this headline">¶</a></h7>
+<dl class="function">
+<dt id="root.spikes.data_simulator_plot.oscdatamain.simulate">
+<tt class="descclassname">root.spikes.data_simulator_plot.oscdatamain.</tt><tt class="descname">simulate</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdatamain.html#simulate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdatamain.simulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function starts four separate processes:</p>
+<blockquote>
+<div><p>1: A thread playing back two channels of data from one EEG file</p>
+<p>2: A thread playing back the same two channels from a coupled EEG file (These two files correspond to two kissing people)</p>
+<p>3: A thread is plotting one channel&#8217;s data of the people and forwarding the other channel&#8217;s data to another port</p>
+<p>4: A thread is plotting the second channel&#8217;s data, forwarded by the third thread</p>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.data_simulator_plot.oscdataplotter">
+<span id="root-spikes-data-simulator-plot-oscdataplotter-module"></span><h7>root.spikes.data_simulator_plot.oscdataplotter module<a class="headerlink" href="#module-root.spikes.data_simulator_plot.oscdataplotter" title="Permalink to this headline">¶</a></h7>
+<dl class="class">
+<dt id="root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter">
+<em class="property">class </em><tt class="descclassname">root.spikes.data_simulator_plot.oscdataplotter.</tt><tt class="descname">OSCDataPlotter</tt><big>(</big><em>ip='127.0.0.1', port=80, osc_addresses=['/'], forward_ip=None, forward_port=-1, bufferlength=512, frameinterval=50</em><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdataplotter.html#OSCDataPlotter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Methods</p>
+<dl class="method">
+<dt id="root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.default_handler">
+<tt class="descname">default_handler</tt><big>(</big><em>addr</em>, <em>types</em>, <em>value</em>, <em>client_address</em><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdataplotter.html#OSCDataPlotter.default_handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.default_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback for unhandled OSC messages.</p>
+<p>If forward port is set, the message is forwarded to that address. If it is set to 0, the message is ignored. If set to -1, a message is printed that an OSC message was unhandled.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.plotStream">
+<tt class="descname">plotStream</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdataplotter.html#OSCDataPlotter.plotStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.plotStream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive, buffer and plot data.
+Plotting code is based on this example: <a class="reference external" href="https://jakevdp.github.io/blog/2012/08/18/matplotlib-animation-tutorial/">https://jakevdp.github.io/blog/2012/08/18/matplotlib-animation-tutorial/</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.plot_handler">
+<tt class="descname">plot_handler</tt><big>(</big><em>addr</em>, <em>types=''</em>, <em>value=''</em>, <em>client_address=''</em><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdataplotter.html#OSCDataPlotter.plot_handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.plot_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback method for received OSC messages.</p>
+<p>The received data is buffered in self.data which is a dictionary with a data buffer for each subscribed address</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdataplotter.html#OSCDataPlotter.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdataplotter.OSCDataPlotter.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive, buffer and plot data on a separate process</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.data_simulator_plot.oscdatasimulator">
+<span id="root-spikes-data-simulator-plot-oscdatasimulator-module"></span><h7>root.spikes.data_simulator_plot.oscdatasimulator module<a class="headerlink" href="#module-root.spikes.data_simulator_plot.oscdatasimulator" title="Permalink to this headline">¶</a></h7>
+<p>1: Opens HDF5 file.</p>
+<p>2: Opens UDP connection to IP and port.</p>
+<p>3: Streams selected channels using OSC</p>
+<dl class="class">
+<dt id="root.spikes.data_simulator_plot.oscdatasimulator.OSCDataSimulator">
+<em class="property">class </em><tt class="descclassname">root.spikes.data_simulator_plot.oscdatasimulator.</tt><tt class="descname">OSCDataSimulator</tt><big>(</big><em>filename, ip='127.0.0.1', port=8000, osc_address='eeg', channels=[0, 1, 2, 3]</em><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdatasimulator.html#OSCDataSimulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdatasimulator.OSCDataSimulator" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Methods</p>
+<dl class="method">
+<dt id="root.spikes.data_simulator_plot.oscdatasimulator.OSCDataSimulator.simulateData">
+<tt class="descname">simulateData</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdatasimulator.html#OSCDataSimulator.simulateData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdatasimulator.OSCDataSimulator.simulateData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data into memory, simulate playback with proper samplerate and send over UDP using OSC. Closes connection afterwards</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="root.spikes.data_simulator_plot.oscdatasimulator.OSCDataSimulator.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/data_simulator_plot/oscdatasimulator.html#OSCDataSimulator.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.data_simulator_plot.oscdatasimulator.OSCDataSimulator.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate data on a separate process</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.data_simulator_plot">
+<span id="module-contents"></span><h7>Module contents<a class="headerlink" href="#module-root.spikes.data_simulator_plot" title="Permalink to this headline">¶</a></h7>
+<p>Read paired EEG data from two people and play it back.</p>
+<p>The simulated EEG data is send over OSC over the localhost port 8000.</p>
+<p>The data is caught by the second process for further processing.</p>
+<p>This further processing is</p>
+<p>pyOSC works on Python 2.7</p>
+<p>MultiProcessing is used instead of Threads because MatPlotLib does not work
+on a sub-thread. It does work on a sub-process.</p>
+<p>Two instances of oscdatasimulator are used to playback two EEG files. B</p>
+<p>Download pyOSC from <a class="reference external" href="https://trac.v2.nl/wiki/pyOSC">https://trac.v2.nl/wiki/pyOSC</a></p>
+</div>
+</div>
+<span id="document-root.spikes.pyosc"></span><div class="section" id="root-spikes-pyosc-package">
+<h6>root.spikes.pyosc package<a class="headerlink" href="#root-spikes-pyosc-package" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="submodules">
+<h7>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h7>
+</div>
+<div class="section" id="module-root.spikes.pyosc.pyoscclient">
+<span id="root-spikes-pyosc-pyoscclient-module"></span><h7>root.spikes.pyosc.pyoscclient module<a class="headerlink" href="#module-root.spikes.pyosc.pyoscclient" title="Permalink to this headline">¶</a></h7>
+<p>Test application for sending OSC data using the PyOSC library for Python 2</p>
+<dl class="function">
+<dt id="root.spikes.pyosc.pyoscclient.simulateData">
+<tt class="descclassname">root.spikes.pyosc.pyoscclient.</tt><tt class="descname">simulateData</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pyosc/pyoscclient.html#simulateData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pyosc.pyoscclient.simulateData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.pyosc.pyoscmain">
+<span id="root-spikes-pyosc-pyoscmain-module"></span><h7>root.spikes.pyosc.pyoscmain module<a class="headerlink" href="#module-root.spikes.pyosc.pyoscmain" title="Permalink to this headline">¶</a></h7>
+<p>Usage example of pyOSC,
+an OSC implementation for Python 2.7</p>
+<p>Two threads are started, one sending, one receiving messages.</p>
+<dl class="function">
+<dt id="root.spikes.pyosc.pyoscmain.func1">
+<tt class="descclassname">root.spikes.pyosc.pyoscmain.</tt><tt class="descname">func1</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pyosc/pyoscmain.html#func1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pyosc.pyoscmain.func1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="root.spikes.pyosc.pyoscmain.func2">
+<tt class="descclassname">root.spikes.pyosc.pyoscmain.</tt><tt class="descname">func2</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pyosc/pyoscmain.html#func2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pyosc.pyoscmain.func2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.pyosc.pyoscserver">
+<span id="root-spikes-pyosc-pyoscserver-module"></span><h7>root.spikes.pyosc.pyoscserver module<a class="headerlink" href="#module-root.spikes.pyosc.pyoscserver" title="Permalink to this headline">¶</a></h7>
+<p>Test application for receiving OSC data from pyoscclient.</p>
+<p>Works on Python 2.</p>
+<dl class="function">
+<dt id="root.spikes.pyosc.pyoscserver.plot_handler">
+<tt class="descclassname">root.spikes.pyosc.pyoscserver.</tt><tt class="descname">plot_handler</tt><big>(</big><em>path</em>, <em>tags</em>, <em>args</em>, <em>source</em><big>)</big><a class="reference internal" href="_modules/root/spikes/pyosc/pyoscserver.html#plot_handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pyosc.pyoscserver.plot_handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="root.spikes.pyosc.pyoscserver.simulateData">
+<tt class="descclassname">root.spikes.pyosc.pyoscserver.</tt><tt class="descname">simulateData</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pyosc/pyoscserver.html#simulateData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pyosc.pyoscserver.simulateData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.pyosc">
+<span id="module-contents"></span><h7>Module contents<a class="headerlink" href="#module-root.spikes.pyosc" title="Permalink to this headline">¶</a></h7>
+<p>Spike project for trying out the PyOSC library.
+This library only works with Python 2.*</p>
+</div>
+</div>
+<span id="document-root.spikes.pythonosc"></span><div class="section" id="root-spikes-pythonosc-package">
+<h6>root.spikes.pythonosc package<a class="headerlink" href="#root-spikes-pythonosc-package" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="submodules">
+<h7>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h7>
+</div>
+<div class="section" id="module-root.spikes.pythonosc.pythonoscclient">
+<span id="root-spikes-pythonosc-pythonoscclient-module"></span><h7>root.spikes.pythonosc.pythonoscclient module<a class="headerlink" href="#module-root.spikes.pythonosc.pythonoscclient" title="Permalink to this headline">¶</a></h7>
+<p>Testapplication for sending OSC data using python-OSC</p>
+<p>This program sends 10 random values between 0.0 and 1.0 to the /filter address,
+waiting for 1 seconds between each value.</p>
+<dl class="function">
+<dt id="root.spikes.pythonosc.pythonoscclient.simulateData">
+<tt class="descclassname">root.spikes.pythonosc.pythonoscclient.</tt><tt class="descname">simulateData</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pythonosc/pythonoscclient.html#simulateData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pythonosc.pythonoscclient.simulateData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.pythonosc.pythonoscmain">
+<span id="root-spikes-pythonosc-pythonoscmain-module"></span><h7>root.spikes.pythonosc.pythonoscmain module<a class="headerlink" href="#module-root.spikes.pythonosc.pythonoscmain" title="Permalink to this headline">¶</a></h7>
+<p>Usage example of Python-OSC, an OSC implementation for Python 3.4</p>
+<p>Two threads are started, one sending, one receiving messages.</p>
+<dl class="function">
+<dt id="root.spikes.pythonosc.pythonoscmain.func1">
+<tt class="descclassname">root.spikes.pythonosc.pythonoscmain.</tt><tt class="descname">func1</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pythonosc/pythonoscmain.html#func1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pythonosc.pythonoscmain.func1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="root.spikes.pythonosc.pythonoscmain.func2">
+<tt class="descclassname">root.spikes.pythonosc.pythonoscmain.</tt><tt class="descname">func2</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pythonosc/pythonoscmain.html#func2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pythonosc.pythonoscmain.func2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.pythonosc.pythonoscserver">
+<span id="root-spikes-pythonosc-pythonoscserver-module"></span><h7>root.spikes.pythonosc.pythonoscserver module<a class="headerlink" href="#module-root.spikes.pythonosc.pythonoscserver" title="Permalink to this headline">¶</a></h7>
+<p>Test application for using python-OSC to receive OSC data from pythonoscclient.py</p>
+<p>Works with python 3</p>
+<dl class="function">
+<dt id="root.spikes.pythonosc.pythonoscserver.simulateData">
+<tt class="descclassname">root.spikes.pythonosc.pythonoscserver.</tt><tt class="descname">simulateData</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/pythonosc/pythonoscserver.html#simulateData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.pythonosc.pythonoscserver.simulateData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes.pythonosc">
+<span id="module-contents"></span><h7>Module contents<a class="headerlink" href="#module-root.spikes.pythonosc" title="Permalink to this headline">¶</a></h7>
+<p>Spike project for trying out the PythonOSC library.
+This library only works with Python 3.*
+We chose to continue the EEG-Kiss project with Python 2.7.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="submodules">
+<h5>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="module-root.spikes.bandpassfilterspike">
+<span id="root-spikes-bandpassfilterspike-module"></span><h5>root.spikes.bandpassfilterspike module<a class="headerlink" href="#module-root.spikes.bandpassfilterspike" title="Permalink to this headline">¶</a></h5>
+<p>This python program opens a predefined HDF file  
+then filters the data and visualizes the data EEG.</p>
+<p>The HDF file contains six types of data for eight channels.
+The EEG stream for the first channel is visualised.</p>
+<p>Used libraries are:</p>
+<p>mne         -&gt; for filtering and other EEG analytics</p>
+<p>numpy       -&gt; for mathmetics</p>
+<p>MatplotLib  -&gt; for plotting</p>
+<p>h5py        -&gt; for reading HDF files</p>
+<dl class="function">
+<dt id="root.spikes.bandpassfilterspike.plotLotsOfData">
+<tt class="descclassname">root.spikes.bandpassfilterspike.</tt><tt class="descname">plotLotsOfData</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/root/spikes/bandpassfilterspike.html#plotLotsOfData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#root.spikes.bandpassfilterspike.plotLotsOfData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is basically a script for trying out a number of functionalities.</p>
+<p>1: First, a file is read using the HDFFilreader.</p>
+<p>2: From that file, two EEG channels are isolated.</p>
+<p>3: Different band-pass filters are applied using MNE&#8217;s Filter package</p>
+<p>4: Activation of a filter band in a time-window is calculated (!!! But this is done in the wrong way! Do not use this!!!)</p>
+<p>5: The left and right channels filtered information is combined into valence and arousel values</p>
+<p>6: All these steps are repeated for the paired data file</p>
+<p>7: All this information is plotted</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-root.spikes">
+<span id="module-contents"></span><h5>Module contents<a class="headerlink" href="#module-root.spikes" title="Permalink to this headline">¶</a></h5>
+<p>The spikes package contains bits and pieces of code that were used to try out functionalities, methods or libraries. The sub-directories contain small spike projects.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="module-root">
+<span id="module-contents"></span><h3>Module contents<a class="headerlink" href="#module-root" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html#document-index">Table Of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-root">root package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-root">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.html#document-index">eeg-kiss 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Fourtress.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
