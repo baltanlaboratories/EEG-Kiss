@@ -1,0 +1,5 @@
+Sketch -> Import library -> Add library
+
+Search for "oscP5" 
+
+Select the found "oscP5" lib and click "Install"
