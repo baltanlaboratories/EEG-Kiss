@@ -2,7 +2,7 @@ class Version( object ):
 
     def __init__( self ):
         self.MajorVersionNumber = 1
-        self.MinorVersionNumber = 6
+        self.MinorVersionNumber = 7
         self.BuildNumber = 0
     
     def getVersionNumber( self ):

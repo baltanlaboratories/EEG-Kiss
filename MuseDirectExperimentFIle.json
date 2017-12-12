@@ -1,0 +1,32 @@
+[
+	{
+		"enabled_configurations": [
+			"default_local_file_save_guid",
+			"osc_2"
+		],
+		"id": "Muse-13E4",
+		"notch": "60 Hz",
+		"preset": "PRESET_14",
+		"subject": "Geel"
+	},
+	{
+		"enabled_configurations": [
+			"default_local_file_save_guid",
+			"osc_2"
+		],
+		"id": "Muse-865F",
+		"notch": "60 Hz",
+		"preset": "PRESET_14",
+		"subject": "Rood"
+	},
+	{
+		"enabled_configurations": [
+			"default_local_file_save_guid",
+			"osc_2"
+		],
+		"id": "Muse-8BA4",
+		"notch": "60 Hz",
+		"preset": "PRESET_14",
+		"subject": "Groen"
+	}
+]
