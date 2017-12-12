@@ -10,6 +10,7 @@ import threading
 from root.core.blackboard               import Blackboard
 from root.core.settings                 import TimeSettings, FrequencyBandSettings, SpectrumSettings
 from root.input.imecinput               import ImecInput
+from root.input.museinput               import MuseInput
 from root.input.datasimulator           import DataSimulator
 from root.input.timedsimulator          import TimedSimulator
 from root.output.filerecorder           import FileRecorder

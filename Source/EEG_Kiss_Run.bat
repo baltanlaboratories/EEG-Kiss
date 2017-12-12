@@ -6,3 +6,4 @@ rem This batch file must be placed at the same heigth as the "EEG-KISS-Project" 
 
 cd .\EEG-KISS-Project\root\gui
 python -m applicationmain
+cd ..\..\..

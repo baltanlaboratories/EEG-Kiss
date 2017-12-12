@@ -8,3 +8,4 @@ rem This batch file must be placed at the same heigth as the "EEG-KISS-Project" 
 cd .\EEG-KISS-Project\headset_simulator
 rem python -m serial_simulator -ch1 30 250 -ch2 6 500 -ch3 9 1000 -ch4 12 2000 -r -p COM14
 python -m serial_simulator -p COM14
+cd ..\..
