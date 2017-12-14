@@ -1,7 +1,4 @@
-﻿import logging
-import sys
-import serial
-import struct 
+﻿import logging, random, sys, serial, struct, time
 
 from root.core.observerpattern  import Subject
 from root.core.processingthread import ProcessingThread
@@ -56,7 +53,7 @@ class ImecInput( Subject, ProcessingThread ):
         self._timestamp_offset  = 0
         self._timestamp         = 0
         self.last_time          = 0
-        self.start_time         = 0
+        self.start_time         = time.time()
         self.total_time         = 0
         self._start             = 0
         self._rt_prev           = 0
@@ -84,6 +81,9 @@ class ImecInput( Subject, ProcessingThread ):
         Every EEG block contains 8 pairs of two bytes
         Value is stored as 12-bit unsigned integer in 16-bit word
         """ 
+ #       self._latest_timestamp = time.time()
+ #       timestamp = self._latest_timestamp - self.start_time
+
         sample_data         = chunks( eeg_pack, 2)
         for index, sample in enumerate( sample_data ):
             pattern         = self._pattern + PatternStrings.CHANNEL + str(index + 1)
@@ -92,9 +92,13 @@ class ImecInput( Subject, ProcessingThread ):
             sample_value = self._bytesToInt12(sample)
             
             #print sample_value, timestamp
+
+
+            sample_value = random.randint(0, 4000)
             self.blackboard.put_data(pattern, sample_value, timestamp)
+           # print ('pattern', pattern, 'sample_value', sample_value, 'timestamp', timestamp)
             
-            self._latest_timestamp = timestamp
+        self._latest_timestamp = timestamp
     
     
     def _parse_dc_offset(self, data):
@@ -147,6 +151,7 @@ class ImecInput( Subject, ProcessingThread ):
                 self.total_time = new_total_time
                 if self._first:
                     self.start_time = self.total_time
+ #                   self.start_time = time.time()
                     self._first     = False
                     # NOTE: Next is debug-code to show time-drifting between writing to COM-port (headset) and reading from COM-port.
                     #       With thread-interval set to 0.1 ms headset reading seems to go well, but hs-simulator seems to write too fast.
@@ -472,7 +477,9 @@ class ImecInput( Subject, ProcessingThread ):
     
     
     def get_time(self):
+        print ('get_time', self._latest_timestamp)
         return self._latest_timestamp
+#        return 0
     
     
     def get_duration(self):
@@ -503,4 +510,6 @@ class ImecInput( Subject, ProcessingThread ):
         return self._port_state
 
     def is_idle(self):
-        return ProcessingThread.isIdle(self) and self._port_state == States.IDLE and self._serial_state == States.IDLE
+        isidleval = ProcessingThread.isIdle(self) and self._port_state == States.IDLE and self._serial_state == States.IDLE
+        print ('imecinput.isidle', isidleval)
+        return isidleval

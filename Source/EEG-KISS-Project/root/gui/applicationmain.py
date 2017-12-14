@@ -26,9 +26,10 @@ def __main__():
 
     # Initialize the application components
     # First create view, tk instance must exist before you can create a object in the model (ex. IntVar())
+    useMuse     = True
     view        = ApplicationView()
-    model       = ApplicationModel()
-    controller  = ApplicationController( model, view )
+    model       = ApplicationModel(useMuse)
+    controller  = ApplicationController( model, view, useMuse )
     controller.update_gui_forever()
     
 if __name__ == '__main__':

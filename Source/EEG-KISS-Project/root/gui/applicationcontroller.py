@@ -82,7 +82,7 @@ class ApplicationController( Observer ):
     Two data files of headset streams can be opened. Pre-specified parts of these data streams are plotted in the GUI
     '''
 
-    def __init__(self, model, view ):
+    def __init__(self, model, view, useMuse ):
         """
         This Controller initializes the Model and the View.
         Then, in infinite loop is started that will update the application components.
@@ -100,6 +100,7 @@ class ApplicationController( Observer ):
         self._checkTime         = False
         self._bluetooth         = None
         self._kissing           = False
+        self._useMuse           = useMuse
         
         self.play_loopmode = IntVar()
 
@@ -470,18 +471,32 @@ class ApplicationController( Observer ):
         self.logger.log(logging.INFO, (__file__, ": applicationcontroller.py: Play loopmode:", self.play_loopmode.get()))
 
     def toggle_headset_connection(self):
-        if self.model.is_headset_connected():
-            self.model.stop_headsets()
-            self.model.disconnect_headsets()
-            self.set_status_text('Disconnected')
+#        if self.model.is_headset_connected():
+#            self.model.stop_headsets()
+#            self.model.disconnect_headsets()
+#            self.set_status_text('Disconnected')
+#        else:
+#            self.view.btn_connect.config(state = 'disabled')
+#            self.view.root.update()
+#            self.view.canvas.draw()
+#            self.connect_headsets()
+#            self.view.btn_connect.config(state = 'enabled')
+
+        self.view.btn_connect.config(state = 'disabled')
+        self.view.root.update()
+        self.view.canvas.draw()
+        if self._useMuse:
+            self.connect_museheadsets()
         else:
-            self.view.btn_connect.config(state = 'disabled')
-            self.view.root.update()
-            self.view.canvas.draw()
             self.connect_headsets()
-            self.view.btn_connect.config(state = 'enabled')
+        self.view.btn_connect.config(state = 'enabled')
 
         self.notify()
+
+    def connect_museheadsets(self):
+        self.set_status_text('Connecting muse headsets')
+        self.view.root.update()
+        self.model.add_muse_headset_connection()
 
     def connect_headsets(self):
         if Testing.SERIAL_SIMULATOR:
@@ -516,7 +531,7 @@ class ApplicationController( Observer ):
             for addr in bt_devices:
                 # NOTE: Filter set on host-address i.s.o. host-name ('Wireless EEG' in name) because name
                 #       is not always found within search duration (on Windows-8 EEG-kiss laptop).
-                if '00:13:43' in addr:
+                 if ('00:06:66' in addr and self._useMuse) or ('00:13:43' in addr and not self._useMuse):
                     hs_addr.append(addr)
             
             if len(hs_addr) == 0:

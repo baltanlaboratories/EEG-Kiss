@@ -155,6 +155,7 @@
     <Compile Include="root\input\datasimulator.py" />
     <Compile Include="root\input\hdfreader.py" />
     <Compile Include="root\input\imecinput.py" />
+    <Compile Include="root\input\museinput.py" />
     <Compile Include="root\input\timedsimulator.py" />
     <Compile Include="root\input\__init__.py" />
     <Compile Include="root\output\baseplot.py" />

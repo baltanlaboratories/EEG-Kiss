@@ -32,7 +32,7 @@ class ApplicationModel( Subject ):
     The components are all publicly available to the outside, though, they should be approached only through the applications controller.
     """ 
     
-    def __init__(self):
+    def __init__(self, useMuse):
         Subject.__init__( self )
         self.nr_of_headsets = 2
         self.channels       = [1,2,3,4]
@@ -45,6 +45,7 @@ class ApplicationModel( Subject ):
         self.oscwriters     = []
         
         self._connected_headsets = 0
+        self._useMuse = useMuse
 
         self.timeSettings = TimeSettings()
         self.frequencySpectrumSettings =SpectrumSettings()
@@ -55,8 +56,13 @@ class ApplicationModel( Subject ):
             self.simulators.append( TimedSimulator( self.blackboard ) ) 
         
         # Initialize headsets
+        i = 0
         for headset in range( self.nr_of_headsets ):
-            self.headsets.append( ImecInput( self.blackboard, PatternStrings.SIGNAL_EEG + '%d' % (headset) ) )
+            if self._useMuse:
+                self.headsets.append( MuseInput(i, self.blackboard, PatternStrings.SIGNAL_EEG + '%d' % (headset) ) )
+            else:
+                self.headsets.append( ImecInput( self.blackboard, PatternStrings.SIGNAL_EEG + '%d' % (headset) ) )
+            i += 1
         
         # Initialize preprocessing filters
         for i, channel in enumerate(self.channels):
@@ -189,7 +195,10 @@ class ApplicationModel( Subject ):
             if hs.is_connected():
                 count += 1
 
-        if count > 0 and count == self._connected_headsets:
+        print ('count', count)
+        print ('connected headsets', self._connected_headsets)
+
+        if count > 0 and count >= self._connected_headsets:
             return True
 
         return False
@@ -245,7 +254,11 @@ class ApplicationModel( Subject ):
         """
         for i, hs in enumerate(self.headsets):
             if hs:
-                hs.start('headset-%d' % i)
+                print ('headset-%d start'% i)
+                if self._useMuse:
+                    hs.start(i, 'headset-%d' % i)
+                else:
+                    hs.start(i)
         self.notify_observers()
                  
     def stop_headsets( self ):
@@ -308,6 +321,9 @@ class ApplicationModel( Subject ):
             return True
 
         return False
+
+    def add_muse_headset_connection(self):
+        self._connected_headsets = 2
     
     def get_connected_headsets(self):
         return self._connected_headsets
