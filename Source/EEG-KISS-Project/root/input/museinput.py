@@ -27,7 +27,7 @@ class MuseInput( Subject, ProcessingThread ):
         self._rt_prev           = 0
         self.start_time         = time.time()
         self._latest_timestamp  = self.start_time
-        if hasattr(self, 'OSCserver') and self.OSCserver._running:
+        if hasattr(self, 'OSCserver') and self.OSCserver.running:
             self._running = True
             self._port_state = States.BUSY
             self._serial_state = States.BUSY
