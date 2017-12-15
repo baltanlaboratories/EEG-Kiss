@@ -1,0 +1,8 @@
+I made some minor changes to the OSC.py file to support 'd' (doubles) and OSC addresses that do not start with a '/'.
+
+
+changes:
+. _readDouble function added
+. addMsgHandler two lines of code commented, which were responsible for adding the '/' to all the msg handlers at the start. (MuseDirect sends without a '/')
+. 	table = {"i":_readInt, "f":_readFloat, "s":_readString, "b":_readBlob, "d":_readDouble}
+ on line 829 - to add support for doubles with 'd'
