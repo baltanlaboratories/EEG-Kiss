@@ -2,8 +2,7 @@ from root.gui.applicationcontroller     import ApplicationController
 from root.gui.applicationmodel          import ApplicationModel
 from root.gui.applicationview           import ApplicationView
 
-import logging
-import time
+import logging, time, sys
 
 def __main__():  
     """
@@ -26,7 +25,11 @@ def __main__():
 
     # Initialize the application components
     # First create view, tk instance must exist before you can create a object in the model (ex. IntVar())
-    useMuse     = True
+    useMuse = False
+    for arg in sys.argv[1:]:
+        if arg == 'useMuse':
+            useMuse = True
+    
     view        = ApplicationView()
     model       = ApplicationModel(useMuse)
     controller  = ApplicationController( model, view, useMuse )

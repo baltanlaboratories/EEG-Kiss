@@ -494,7 +494,7 @@ class ApplicationController( Observer ):
         self.notify()
 
     def connect_museheadsets(self):
-        self.set_status_text('Connecting muse headsets')
+        self.set_status_text('Receiving from Muse Direct')
         self.view.root.update()
         self.model.add_muse_headset_connection()
 
@@ -919,8 +919,8 @@ class ApplicationController( Observer ):
             if hs_connected:
                 self.view.btn_connect.config(state = 'disabled')
                 
-            self.view.b_toggle_streaming.config( text ='Stop streaming')
             self.view.b_toggle_recording.config( state = 'enabled' )
+            self.view.b_toggle_streaming.config( text ='Stop streaming')
         else:
             if hs_connected:
                 self.view.btn_connect.config(state = 'enabled')
@@ -1007,14 +1007,15 @@ class ApplicationController( Observer ):
         self.check_gui_state()
 
     def handle_key_event(self, key):
-        if key == 'r':
+        if key == '\x12': # ctrl + r
             self.toggle_recording()
         elif self.model.is_recording():
-            if key == 'k':
+            if key == '\x0b': # ctrl + k
                 if not self._kissing:
                     self.start_kiss_marker()
                 else:
                     self.stop_kiss_marker()
-            elif key == 'p':
+            elif key == '\x10': # ctrl + p
                 self.poi_marker()
+        pass
     

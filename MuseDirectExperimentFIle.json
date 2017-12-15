@@ -1,32 +1,38 @@
 [
 	{
 		"enabled_configurations": [
-			"default_local_file_save_guid",
 			"osc_2"
 		],
 		"id": "Muse-13E4",
 		"notch": "60 Hz",
 		"preset": "PRESET_14",
-		"subject": "Geel"
+		"subject": "Wit 1"
 	},
 	{
 		"enabled_configurations": [
-			"default_local_file_save_guid",
-			"osc_2"
+			"osc_3"
 		],
-		"id": "Muse-865F",
+		"id": "Muse-4CC9",
 		"notch": "60 Hz",
 		"preset": "PRESET_14",
-		"subject": "Rood"
+		"subject": "Wit 3"
 	},
 	{
 		"enabled_configurations": [
-			"default_local_file_save_guid",
-			"osc_2"
+			
 		],
 		"id": "Muse-8BA4",
 		"notch": "60 Hz",
 		"preset": "PRESET_14",
-		"subject": "Groen"
+		"subject": "Wit 2"
+	},
+	{
+		"enabled_configurations": [
+			
+		],
+		"id": "Muse-DA97",
+		"notch": "60 Hz",
+		"preset": "PRESET_14",
+		"subject": "Wit 4"
 	}
 ]

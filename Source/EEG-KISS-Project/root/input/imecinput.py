@@ -477,7 +477,7 @@ class ImecInput( Subject, ProcessingThread ):
     
     
     def get_time(self):
-        print ('get_time', self._latest_timestamp)
+        #print ('get_time', self._latest_timestamp)
         return self._latest_timestamp
 #        return 0
     
@@ -511,5 +511,5 @@ class ImecInput( Subject, ProcessingThread ):
 
     def is_idle(self):
         isidleval = ProcessingThread.isIdle(self) and self._port_state == States.IDLE and self._serial_state == States.IDLE
-        print ('imecinput.isidle', isidleval)
+        #print ('imecinput.isidle', isidleval)
         return isidleval
