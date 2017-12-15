@@ -670,8 +670,9 @@ class ApplicationController( Observer ):
                     self.model.simulators[index] = DataSimulator( self.model.simulators[index] )
                 _data.append(chan_data)
             
+            print ('markers', markers)
 #             if markers.any():
-            if markers != None:
+            if markers.any() != None:
                 _data.append( markers )
             
             # Get simulator patterns
@@ -679,7 +680,7 @@ class ApplicationController( Observer ):
                             for i in self.model.channels]
             
 #             if markers.any():
-            if markers != None: # TODO: Check why .any is not working, because now a 'FutureWarning' is raised.
+            if markers.any() != None: # TODO: Check why .any is not working, because now a 'FutureWarning' is raised.
                 _eeg_chans.append(PatternStrings.MARKERS)
             
             _interval = 1. / frequencies[_eeg_type]
