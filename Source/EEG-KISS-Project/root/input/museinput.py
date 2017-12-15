@@ -94,7 +94,7 @@ class MuseInput( Subject, ProcessingThread ):
     def stop(self):
         self.OSCserver.running = False
         ProcessingThread.stop( self )
-        reset()
+        self.reset()
         
     def set_connection(self, socket = None):
         print ("set_connection called, _socket can be used")
