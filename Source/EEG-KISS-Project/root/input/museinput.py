@@ -27,8 +27,14 @@ class MuseInput( Subject, ProcessingThread ):
         self._rt_prev           = 0
         self.start_time         = time.time()
         self._latest_timestamp  = self.start_time
-        self._port_state = States.IDLE
-        self._serial_state = States.IDLE
+        if hasattr(self, 'OSCserver') and self.OSCserver._running:
+            self._running = True
+            self._port_state = States.BUSY
+            self._serial_state = States.BUSY
+        else:
+            self._running = False
+            self._port_state = States.IDLE
+            self._serial_state = States.IDLE
         print ('reset called')
 
     def parse_packet(self, channel, value, timestamp):
@@ -60,9 +66,6 @@ class MuseInput( Subject, ProcessingThread ):
         print ("museinput start")
         self.OSCserver = OSC.OSCServer( ("localhost", 7001 + headsetnum) );
         print ("museinput OSCServer initialized")
-        self.OSCserver.addMsgHandler( "/eegkiss/eeg", self.OSCserver_callback ) 
-        self.OSCserver.addMsgHandler( "/eegkiss/eeg/quantization", self.OSCserver_callback ) 
-        self.OSCserver.addMsgHandler( "/eegkiss/eeg/0", self.OSCserver_callback ) 
         self.OSCserver.addMsgHandler( "eegkiss/eeg", self.OSCserver_callback ) 
         self.OSCserver.addMsgHandler( "eegkiss/eeg/quantization", self.OSCserver_callback ) 
         self.OSCserver.addMsgHandler( "eegkiss/eeg/0", self.OSCserver_callback ) 
@@ -72,7 +75,6 @@ class MuseInput( Subject, ProcessingThread ):
         for addr in self.OSCserver.getOSCAddressSpace():
             print addr
 
-
         ProcessingThread.start(self, 0.5, name)
 
         self.notify_observers()
@@ -81,15 +83,18 @@ class MuseInput( Subject, ProcessingThread ):
 
         return self._running
 
+    def toggle_pause(self):
+        self.OSCserver.running = not self.OSCserver.running
+        self.reset()
+
     def process_step(self):
-        self.OSCserver.handle_request()
+        if self.OSCserver.running:
+            self.OSCserver.handle_request()
 
     def stop(self):
-        self._running = False
         self.OSCserver.running = False
         ProcessingThread.stop( self )
-        self._port_state = States.IDLE
-        self._serial_state = States.IDLE
+        reset()
         
     def set_connection(self, socket = None):
         print ("set_connection called, _socket can be used")
@@ -129,7 +134,7 @@ class MuseInput( Subject, ProcessingThread ):
 
     def is_idle(self):
         isidleval = ProcessingThread.isIdle(self) and self._port_state == States.IDLE and self._serial_state == States.IDLE
-        print ('isidle', isidleval)
+        #print ('isidle', isidleval)
         return isidleval
 
     def send_battery_command(self):
