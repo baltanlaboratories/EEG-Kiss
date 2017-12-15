@@ -70,7 +70,8 @@ class MuseInput( Subject, ProcessingThread ):
             self.OSCserver.addMsgHandler( "eegkiss/eeg", self.OSCserver_callback ) 
             self.OSCserver.addMsgHandler( "eegkiss/eeg/quantization", self.OSCserver_callback ) 
             self.OSCserver.addMsgHandler( "eegkiss/eeg/0", self.OSCserver_callback ) 
-            self.OSCserver.running = True
+        
+        self.OSCserver.running = True
 
         print "Registered Callback-functions:"
         for addr in self.OSCserver.getOSCAddressSpace():
