@@ -64,12 +64,13 @@ class MuseInput( Subject, ProcessingThread ):
         self._port_state = States.BUSY
         self._serial_state = States.BUSY
         print ("museinput start")
-        self.OSCserver = OSC.OSCServer( ("localhost", 7001 + headsetnum) );
-        print ("museinput OSCServer initialized")
-        self.OSCserver.addMsgHandler( "eegkiss/eeg", self.OSCserver_callback ) 
-        self.OSCserver.addMsgHandler( "eegkiss/eeg/quantization", self.OSCserver_callback ) 
-        self.OSCserver.addMsgHandler( "eegkiss/eeg/0", self.OSCserver_callback ) 
-        self.OSCserver.running = True
+        if not hasattr(self, 'OSCserver'):
+            self.OSCserver = OSC.OSCServer( ("localhost", 7001 + headsetnum) );
+            print ("museinput OSCServer initialized")
+            self.OSCserver.addMsgHandler( "eegkiss/eeg", self.OSCserver_callback ) 
+            self.OSCserver.addMsgHandler( "eegkiss/eeg/quantization", self.OSCserver_callback ) 
+            self.OSCserver.addMsgHandler( "eegkiss/eeg/0", self.OSCserver_callback ) 
+            self.OSCserver.running = True
 
         print "Registered Callback-functions:"
         for addr in self.OSCserver.getOSCAddressSpace():
@@ -82,10 +83,6 @@ class MuseInput( Subject, ProcessingThread ):
         self._running = True
 
         return self._running
-
-    def toggle_pause(self):
-        self.OSCserver.running = not self.OSCserver.running
-        self.reset()
 
     def process_step(self):
         if self.OSCserver.running:
