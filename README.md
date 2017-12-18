@@ -20,9 +20,11 @@ EEGKiss project in python 2.7.
 2) Install MuseDirect
 3) Install SuperCollider
 
-a) Add startup.scd to C:\Users\maat\AppData\Local\SuperCollider (which is variable Platform.userConfigDir in SuperCollider)
+a) Make sure the SuperCollider is 64-bit on a 64-bit system. Make sure the latest version is installed. (3.8.8 was needed to make it work on the latest machine).
 
-b) Make sure line 275 in startup.scd refers to an existing folder.
+b) Add startup.scd to C:\Users\maat\AppData\Local\SuperCollider (which is variable Platform.userConfigDir in SuperCollider)
+
+c) Make sure line 275 in startup.scd refers to an existing folder.
 	e.g.: b.write("C:/Users/EEG Kiss/Documents/EEG-Kiss/Tools/eegrecs" ++ (~spaceCount/5).asInt.asString ++"EegSoundRec.wav", "wav", "int16", 0, 0, true);
 
 4) Install Python 2.7, use pip to install the dependencies mentioned below
