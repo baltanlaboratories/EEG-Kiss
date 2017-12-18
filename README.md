@@ -30,16 +30,18 @@ I have not been able to use visual studio to run the python code. I used command
 To start the version that uses Muse, start applicationmain with parameters 'useMuse'. 
 I split the EEG_KISS_Run.bat into two .bat files, one for Muse and one for Imec. EEG_KISS_Run_Muse.bat starts applicationmain.py with 'useMuse'.
 * Dependencies
+
 . python 2.7
 Install using pip:
-- Cython
-- pyOSC
-- numpy
-- matplotlib
-- py2exe-py2
-- pyBluez
-- scipy
-- pyserial
+
+. Cython
+. pyOSC
+. numpy
+. matplotlib
+. py2exe-py2
+. pyBluez
+. scipy
+. pyserial
 
 * Adaptations
 I made some minor changes to the OSC.py file to support 'd' (doubles) and OSC addresses that do not start with a '/'.
