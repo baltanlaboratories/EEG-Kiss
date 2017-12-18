@@ -5,8 +5,11 @@ EEGKiss project, by artists Hermen Maat and Karen Lancel.
 ### What is this repository for? ###
 
 * Quick summary
+
 EEGKiss project in python 2.7.
-* Version 
+
+* Version
+
 1.7
 
 ### How do I get set up? ###
@@ -17,9 +20,9 @@ EEGKiss project in python 2.7.
 2) Install MuseDirect
 3) Install SuperCollider
 
-3a) Add startup.scd to C:\Users\maat\AppData\Local\SuperCollider (which is variable Platform.userConfigDir in SuperCollider)
+a) Add startup.scd to C:\Users\maat\AppData\Local\SuperCollider (which is variable Platform.userConfigDir in SuperCollider)
 
-3b) Make sure line 275 in startup.scd refers to an existing folder.
+b) Make sure line 275 in startup.scd refers to an existing folder.
 	e.g.: b.write("C:/Users/EEG Kiss/Documents/EEG-Kiss/Tools/eegrecs" ++ (~spaceCount/5).asInt.asString ++"EegSoundRec.wav", "wav", "int16", 0, 0, true);
 
 4) Install Python 2.7, use pip to install the dependencies mentioned below
