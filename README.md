@@ -11,6 +11,15 @@ EEGKiss project in python 2.7.
 
 ### How do I get set up? ###
 
+* Installation
+1) Checkout the repository
+2) Install MuseDirect
+3) Install SuperCollider
+4) Install Python 2.7, use pip to install the dependencies mentioned below
+5) Pair the Muse Headsets to the PC.
+6) Find the Muse Headsets using Muse Direct.
+7) Set up Muse Direct as described below and in the example images.
+
 * Configuration
 In the repository there is an .sln file: this is a visual studio project solution file, usually used for c++ projects. Sometimes also used for python projects. 
 I have been able to use this .sln file to view the files, and search through them using VS standard search tools. 
@@ -28,6 +37,7 @@ Install using pip:
 - pyBluez
 - scipy
 - pyserial
+
 * Adaptations
 I made some minor changes to the OSC.py file to support 'd' (doubles) and OSC addresses that do not start with a '/'.
 MuseDirect is used to connect to the muse headsets and provides an interface to deal with that.
