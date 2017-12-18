@@ -1,38 +1,56 @@
 [
 	{
 		"enabled_configurations": [
-			"osc_2"
+			"osc_0"
 		],
 		"id": "Muse-13E4",
 		"notch": "60 Hz",
 		"preset": "PRESET_14",
-		"subject": "Wit 1"
+		"subject": "1"
 	},
 	{
 		"enabled_configurations": [
-			"osc_3"
+			"osc_0"
 		],
 		"id": "Muse-4CC9",
 		"notch": "60 Hz",
 		"preset": "PRESET_14",
-		"subject": "Wit 3"
+		"subject": "3"
 	},
 	{
 		"enabled_configurations": [
-			
+			"osc_0"
+		],
+		"id": "Muse-4D1C",
+		"notch": "60 Hz",
+		"preset": "PRESET_14",
+		"subject": "5"
+	},
+	{
+		"enabled_configurations": [
+			"osc_1"
+		],
+		"id": "Muse-865F",
+		"notch": "60 Hz",
+		"preset": "PRESET_14",
+		"subject": "2"
+	},
+	{
+		"enabled_configurations": [
+			"osc_1"
 		],
 		"id": "Muse-8BA4",
 		"notch": "60 Hz",
 		"preset": "PRESET_14",
-		"subject": "Wit 2"
+		"subject": "6"
 	},
 	{
 		"enabled_configurations": [
-			
+			"osc_1"
 		],
 		"id": "Muse-DA97",
 		"notch": "60 Hz",
 		"preset": "PRESET_14",
-		"subject": "Wit 4"
+		"subject": "4"
 	}
 ]
