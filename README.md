@@ -15,10 +15,19 @@ EEGKiss project in python 2.7.
 In the repository there is an .sln file: this is a visual studio project solution file, usually used for c++ projects. Sometimes also used for python projects. 
 I have been able to use this .sln file to view the files, and search through them using VS standard search tools. 
 I have not been able to use visual studio to run the python code. I used command line for that.
+To start the version that uses Muse, start applicationmain with parameters 'useMuse'. 
+I split the EEG_KISS_Run.bat into two .bat files, one for Muse and one for Imec. EEG_KISS_Run_Muse.bat starts applicationmain.py with 'useMuse'.
 * Dependencies
 . python 2.7
-pip freeze:
+Install using pip:
+- Cython
 - pyOSC
+- numpy
+- matplotlib
+- py2exe-py2
+- pyBluez
+- scipy
+- pyserial
 * Adaptations
 I made some minor changes to the OSC.py file to support 'd' (doubles) and OSC addresses that do not start with a '/'.
 MuseDirect is used to connect to the muse headsets and provides an interface to deal with that.
@@ -26,11 +35,10 @@ MuseDirect is used to connect to the muse headsets and provides an interface to 
 Thus two lines of code were commented in OSC.py in 'addMsgHandler'.
 . MuseDirect sends out OSC messages with doubles. OSC.py did not support receiving doubles (only floats, ints, string.. etc.). Thus I added '_readDouble'. 
 
-
 ### Muse Direct ###
 
 Send to UDP localhost:7001 for the first muse headset, and localhost:7002 for the second muse headset.
-
+See an example of the Muse Direct settings in 'MuseDirectSettingsExample.png'
 
 ### Who do I talk to? ###
 
