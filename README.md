@@ -76,8 +76,12 @@ See an example of the Muse Direct settings in 'MuseDirectSettingsExample.png'
 ### Who do I talk to? ###
 
 . maat@xs4all.nl
+
 . Baltan laboratories
+
 . dirkbroenink.nl
+
 . EagleScience
+
 
 (this readme was written by Dirk Broenink on 18-12-2017)
