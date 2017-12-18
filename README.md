@@ -66,9 +66,15 @@ Install using pip:
 
 I made some minor changes to the OSC.py file to support 'd' (doubles) and OSC addresses that do not start with a '/'.
 MuseDirect is used to connect to the muse headsets and provides an interface to deal with that.
+
 . MuseDirect sends out OSC messages without a '/' at the beginning of the address (for example 'eegkiss/eeg'). However, OSC.py did not support receiving addresses without a '/' at the beginning. 
 Thus two lines of code were commented in OSC.py in 'addMsgHandler'.
+
 . MuseDirect sends out OSC messages with doubles. OSC.py did not support receiving doubles (only floats, ints, string.. etc.). Thus I added '_readDouble'. 
+
+. The changed OSC.py can be found in Source/EEG-KISS-Project/osc
+
+. A better way to do this would be to fork the existing pyOSC git and make these changes, then refer to this fork when installing pyOSC using pip. 
 
 ### Muse Direct ###
 
