@@ -15,6 +15,9 @@ EEGKiss project in python 2.7.
 1) Checkout the repository
 2) Install MuseDirect
 3) Install SuperCollider
+3a) Add startup.scd to C:\Users\maat\AppData\Local\SuperCollider (which is variable Platform.userConfigDir in SuperCollider)
+3b) Make sure line 275 in startup.scd refers to an existing folder.
+	e.g.: b.write("C:/Users/EEG Kiss/Documents/EEG-Kiss/Tools/eegrecs" ++ (~spaceCount/5).asInt.asString ++"EegSoundRec.wav", "wav", "int16", 0, 0, true);
 4) Install Python 2.7, use pip to install the dependencies mentioned below
 5) Pair the Muse Headsets to the PC.
 6) Find the Muse Headsets using Muse Direct.
