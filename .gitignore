@@ -67,3 +67,4 @@ Source/EEG-KISS-Project/.pydevproject
 *.hdf5
 EEG-Radar/EegRadar.exe
 Source/EEG-KISS-Project/UpgradeLog.htm
+Source/records/

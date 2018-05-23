@@ -11,16 +11,13 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>{66893dfd-152b-4bdb-80be-e555afc5701b}</InterpreterId>
-    <InterpreterVersion>2.7</InterpreterVersion>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
-    <Environment>PYTHONPATH=C:\Tom\git\eeg-kiss\Source\EEG-KISS-Project</Environment>
+    <Environment>PYTHONPATH=C:\Users\maat\Documents\EEG-Kiss\Source\EEG-KISS-Project</Environment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <PropertyGroup>
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
-    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="headset_simulator\serial_print.py" />
@@ -326,9 +323,6 @@
     <Folder Include="tests\output" />
     <Folder Include="tests\processing" />
   </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="{66893dfd-152b-4bdb-80be-e555afc5701b}\2.7" />
-  </ItemGroup>
-  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
