@@ -33,8 +33,8 @@ class ApplicationView( Subject ):
         
         width  = 1200
         height = 600
-        self.nr_of_channels = 2     # TODO: Rename this to something like 'max_nr_of_signals_per_channel'
-        self.colors         = ['white','yellow', 'red']
+        self.nr_of_channels = 5     # TODO: Rename this to something like 'max_nr_of_signals_per_channel'
+        self.colors         = ['white','yellow', 'red', 'blue', 'green']
         
         self.root = tk.Tk( 'EEG KISS' )
         self.root.resizable(width=True, height=True)

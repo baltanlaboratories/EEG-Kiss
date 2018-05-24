@@ -34,8 +34,8 @@ class ApplicationModel( Subject ):
     
     def __init__(self, useMuse):
         Subject.__init__( self )
-        self.nr_of_headsets = 2
-        self.channels       = [1,2,3,4]
+        self.nr_of_headsets = 5
+        self.channels       =[1,2,3,4]
         
         self.blackboard     = Blackboard()
         self.simulators     = []
