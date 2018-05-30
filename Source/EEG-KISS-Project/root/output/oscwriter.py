@@ -32,19 +32,22 @@ class OscWriter ( DataConsumer, Subject ):
             
         self.blackboard     = blackboard
         self._patterns      = patterns
-
         self.client = OSC.OSCClient()
-        self.client_port7112 = OSC.OSCClient()
-        self.client.connect(('127.0.0.1', 7110))          # connection for openFramework application (radar-visualisation)
-        # self.client.connect(('172.16.10.83', 7110))      # Test connection with PC-system of Pim M.
-        self.client_port7112.connect(('127.0.0.1', 7112)) # connection for SuperCollider application (audio)
         
+        self.client_port7112 = OSC.OSCClient()
+        self.client_port7112.connect(('127.0.0.1', 7112)) # connection for SuperCollider application (audio)
+        self.set_radar_host('127.0.0.1', 7110)
+    
+    def set_radar_host(self, radar_ip = '127.0.0.1', radar_port = 7110):
+        self.client.connect((radar_ip, radar_port))          # connection for openFramework application (radar-visualisation)
+
+
     def _process_data(self, pattern, data, timestamps):
+        oscmsg = OSC.OSCMessage()
+        oscmsg.setAddress(pattern)
         for sample in data:
-            oscmsg = OSC.OSCMessage()
-            oscmsg.setAddress(pattern)
 #             if '/markers' in pattern:
 #                 print pattern, sample, timestamps
             oscmsg.append(sample/4096.)
-            self.client.send(oscmsg)
-            self.client_port7112.send(oscmsg)
+        self.client.send(oscmsg)
+        self.client_port7112.send(oscmsg)

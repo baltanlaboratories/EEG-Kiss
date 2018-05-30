@@ -294,7 +294,8 @@ class ApplicationController( Observer ):
         for i, channel in enumerate(self.model.get_active_channels(VisualisationTypes.TIME)):
             pats = []
             for headset in range(self.model.nr_of_headsets):
-                pats.append(PatternStrings.SIGNAL_EEG + '%d' % (headset) + PatternStrings.CHANNEL + '%d' % (channel) + PatternStrings.FILTERNOTCH + PatternStrings.FILTERLPF)
+                #pats.append(PatternStrings.SIGNAL_EEG + '%d' % (headset) + PatternStrings.CHANNEL + '%d' % (channel) + PatternStrings.FILTERNOTCH + PatternStrings.FILTERLPF)
+                pats.append(PatternStrings.SIGNAL_EEG + '%d' % (headset) + PatternStrings.CHANNEL + '%d' % (channel))
             pw = TimedSignalPlot(self.model.blackboard, pats, ax = axes[i], marker_pattern = PatternStrings.MARKERS, name=ChannelTypes.names[channel], showLabel=self.model.timeSettings.get_showLabels())
 #             pw = SignalPlot(self.model.blackboard, pats, ax = axes[i], name=ChannelTypes.names[channel], showLabel=self.model.timeSettings.get_showLabels())
             self._plots.append(pw)
@@ -460,7 +461,10 @@ class ApplicationController( Observer ):
                 self.clear_processor_buffers()
                 
                 self.set_playback_time(self.view.plot_scrollbar.get())
-            
+
+            for oscwriter in self.model.oscwriters:
+                oscwriter.set_radar_host(self.view._radar_host_var.get())
+
             self.model.start_simulation()
     
     def stop_playback(self):
@@ -578,6 +582,10 @@ class ApplicationController( Observer ):
                 p.clear_buffers()
                 
             self.clear_processor_buffers()
+
+            #Setup the oscwriters, as the host might have changed
+            for oscwriter in self.model.oscwriters:
+                oscwriter.set_radar_host(self.view._radar_host_var.get())
             
             if not self.model.is_headset_serial_busy():
                 self.model.start_headsets()
@@ -589,8 +597,8 @@ class ApplicationController( Observer ):
         Starts or stops data recording.
         On stop, data is stored to files
         """
-        for index in range( self.model.nr_of_headsets ):
-            self.model.set_filename(index, self.view._filename_vars[index].get() )
+        for index in range(self.model.nr_of_headsets):
+            self.model.set_filename(index, "{}-channel{}".format(self.view._filename_var.get(), index) )
         if self.model.is_recording():
             self.model.stop_recording()
             self.view.b_toggle_recording.config( text ='Start recording')

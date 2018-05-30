@@ -66,6 +66,7 @@ class ApplicationModel( Subject ):
         
         # Initialize preprocessing filters
         for i, channel in enumerate(self.channels):
+            """
             for headset in range( self.nr_of_headsets ):
                 pat = PatternStrings.SIGNAL_EEG + '%d' % (headset) + PatternStrings.CHANNEL + '%d' % (channel)
                 
@@ -80,6 +81,7 @@ class ApplicationModel( Subject ):
                 lpf = FIRFilter( self.blackboard, pat, FilterSettings.LPF_NUMTAPS, FilterSettings.LPF_FS, FilterSettings.LPF_FREQ, 'lpf' )
                 lpf.start(name = 'fir_lpf' + pat)
                 self.processors.append( lpf )
+            """
                 
         # Patterns that will be recorded
         patterns = []

@@ -5,14 +5,17 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{73248897-7be5-4261-8fda-a6bcc84d77e5}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>setup.py</StartupFile>
+    <StartupFile>root/gui/applicationmain.py</StartupFile>
     <SearchPath />
-    <WorkingDirectory>.</WorkingDirectory>
+    <WorkingDirectory>
+    </WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
-    <Environment>PYTHONPATH=C:\Users\maat\Documents\EEG-Kiss\Source\EEG-KISS-Project</Environment>
+    <Environment>PYTHONPATH=C:\Users\maat\Documents\EEG-Kiss\Source\EEG-KISS-Project:C:\Python27EEG\lib\site-packages\mne-0.9.dev0-py2.7.egg;C:\Python27EEG\DLLs;C:\Python27EEG\lib;C:\Python27EEG\lib\lib-tk;C:\Python27EEG;C:\Python27EEG\lib\site-packages</Environment>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <CommandLineArguments>useMuse</CommandLineArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />

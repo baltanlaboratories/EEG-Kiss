@@ -41,6 +41,8 @@ class ApplicationView( Subject ):
         self.root.minsize(width=800, height=450)
         self.root.wm_geometry( "%dx%d" % (width, height) )
         self.root.state('zoomed')
+
+        self._radar_host_var = tk.StringVar(value='127.0.0.1')
         
         self.root.wm_title( "EEG_Kiss - versie " + Version().getVersionNumber() )
         
@@ -203,6 +205,10 @@ class ApplicationView( Subject ):
         self.b_toggle_simulation.grid( row=0, column=5 )
         self.b_stop_simulation.grid( row=1, column=5 )
         self.cb_loopmode.grid( row=0, column=6 )
+
+         # radar host to stream to
+        ttk.Label( master=self.simPanel, text='Radar host: ' ).grid( row=1, column=6 )
+        ttk.Entry( master=self.simPanel, textvariable=self._radar_host_var ).grid( row=1, column=7 )
     
     def init_streaming_panel(self, frame):
         self.streamPanel = ttk.Frame( master=frame )
@@ -229,18 +235,17 @@ class ApplicationView( Subject ):
         
         ttk.Frame( master=self.streamPanel, width=10 ).grid( row=0, rowspan=2, column=5 )
         
-        # filenames for data recording
-        self._filename_vars = []
-        self._filename_vars.append( tk.StringVar(value='filename1') )
-        self._filename_vars.append( tk.StringVar(value='filename2') )
+        # radar host to stream to
+        ttk.Label( master=self.streamPanel, text='Radar host: ' ).grid( row=0, column=6 )
+        ttk.Entry( master=self.streamPanel, textvariable=self._radar_host_var ).grid( row=0, column=7 )
 
-        ttk.Label( master=self.streamPanel, text='Save File 1: ' ).grid( row=0, column=6 )
-        ttk.Entry( master=self.streamPanel, textvariable=self._filename_vars[0] ).grid( row=0, column=7 )
-        
-        ttk.Label( master=self.streamPanel, text='Save File 2: ' ).grid( row=1, column=6 )
-        ttk.Entry( master=self.streamPanel, textvariable=self._filename_vars[1] ).grid( row=1, column=7 )
-        
-        ttk.Frame( master=self.streamPanel, width=50 ).grid( row=0, rowspan=2, column=8 )
+        # filename for data recording
+        self._filename_var = tk.StringVar(value='filename')
+
+        ttk.Label( master=self.streamPanel, text='Save File: ' ).grid( row=1, column=6 )
+        ttk.Entry( master=self.streamPanel, textvariable=self._filename_var ).grid( row=1, column=7 )
+
+        ttk.Frame( master=self.streamPanel, width=50 ).grid( row=0, rowspan=3, column=8 )
         
         # Start/Stop streaming button
         self.b_toggle_streaming = ttk.Button( master=self.streamPanel, text='Start Streaming' )

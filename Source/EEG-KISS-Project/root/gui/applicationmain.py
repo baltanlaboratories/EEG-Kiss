@@ -2,6 +2,8 @@ from root.gui.applicationcontroller     import ApplicationController
 from root.gui.applicationmodel          import ApplicationModel
 from root.gui.applicationview           import ApplicationView
 
+import yappi
+
 import logging, time, sys
 
 def __main__():  
@@ -36,4 +38,15 @@ def __main__():
     controller.update_gui_forever()
     
 if __name__ == '__main__':
+    profiling = False
+    for arg in sys.argv[1:]:
+        if arg == 'profile':
+            profiling = True
+    if (profiling):
+        yappi.start()
     __main__()
+    if (profiling):
+        func_stats = yappi.get_func_stats()
+        func_stats.print_all()
+        yappi.get_thread_stats().print_all()
+        yappi.convert2pstats(func_stats).dump_stats("profileLog.profile")
