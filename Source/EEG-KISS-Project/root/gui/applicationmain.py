@@ -2,7 +2,10 @@ from root.gui.applicationcontroller     import ApplicationController
 from root.gui.applicationmodel          import ApplicationModel
 from root.gui.applicationview           import ApplicationView
 
-import yappi
+try:
+    import yappi
+except:
+    pass
 
 import logging, time, sys
 
