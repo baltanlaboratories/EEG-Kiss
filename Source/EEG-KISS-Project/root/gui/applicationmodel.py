@@ -34,7 +34,7 @@ class ApplicationModel( Subject ):
     
     def __init__(self, useMuse):
         Subject.__init__( self )
-        self.nr_of_headsets = 5
+        self.nr_of_headsets = 6
         self.channels       =[1,2,3,4]
         
         self.blackboard     = Blackboard()
@@ -336,10 +336,8 @@ class ApplicationModel( Subject ):
             if self._connected_headsets > 0:
                 self._connected_headsets -= 1
 
-    def set_foldername(self):
-        self.foldername = 'data'
-        for index in range(self.nr_of_headsets):
-            self.foldername += '_' + self.filerecorders[index].get_filename()
+    def set_foldername(self, name):
+        self.foldername = 'data_{}'.format(name)
         print self.foldername
         file = open(os.path.dirname(__file__) + '\\..\\..\\..\\subfolder.txt', 'w')
         file.write(self.foldername)

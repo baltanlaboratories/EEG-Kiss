@@ -13,6 +13,8 @@ class MuseInput( Subject, ProcessingThread ):
 
         self.blackboard = blackboard
         self._pattern   = pattern
+        self._filter_on_headset = True
+        self._subscribed = False
         
         self.logger = logging.getLogger()
 
@@ -57,7 +59,14 @@ class MuseInput( Subject, ProcessingThread ):
 
         self.notify_observers('update_time')
 
+    def OSCserver_callback_on_forehead(self, path, tags, args, source):
+        # tags will contain 'fff'
+        # args is a OSCMessage with data
+        # source is where the message came from (in case you need to reply)
+
         #print ('path:', path, 'tags:', tags, 'args:', args, 'source:', source)
+        if self._filter_on_headset:
+            self.subscribe_data(args[0] == 1)
 
     def start(self, headsetnum, name = 'no_name'):
         self.start_time         = time.time()
@@ -67,9 +76,9 @@ class MuseInput( Subject, ProcessingThread ):
         if not hasattr(self, 'OSCserver'):
             self.OSCserver = OSC.OSCServer( ("localhost", 7001 + headsetnum) );
             print ("museinput OSCServer initialized")
-            self.OSCserver.addMsgHandler( "eegkiss/eeg", self.OSCserver_callback ) 
-            self.OSCserver.addMsgHandler( "eegkiss/eeg/quantization", self.OSCserver_callback ) 
-            self.OSCserver.addMsgHandler( "eegkiss/eeg/0", self.OSCserver_callback ) 
+            self.OSCserver.addMsgHandler( "eegkiss/elements/touching_forehead", self.OSCserver_callback_on_forehead )
+            self.set_filter_on_forehead(False)
+            self.subscribe_data(True)
         
         self.OSCserver.running = True
 
@@ -137,3 +146,21 @@ class MuseInput( Subject, ProcessingThread ):
 
     def send_battery_command(self):
         pass
+
+    def set_filter_on_forehead(self, enabled):
+        """
+        With the filter enabled, data is only send if the headband has contact with the skin.
+        """
+        self._filter_on_forehead = enabled
+
+    def subscribe_data(self, enabled):
+        if self._subscribed == enabled:
+            return
+        addresses = ["eegkiss/eeg", "eegkiss/eeg/quantization","eegkiss/eeg/0", "eegkiss/notch_filtered_eeg"]
+        if (enabled):
+            for address in addresses:
+                self.OSCserver.addMsgHandler( address, self.OSCserver_callback ) 
+        else:
+            for address in addresses:
+                self.OSCserver.delMsgHandler( address)
+        self._subscribed = enabled

@@ -597,8 +597,9 @@ class ApplicationController( Observer ):
         Starts or stops data recording.
         On stop, data is stored to files
         """
+        name = self.view._filename_var.get()
         for index in range(self.model.nr_of_headsets):
-            self.model.set_filename(index, "{}-channel{}".format(self.view._filename_var.get(), index) )
+            self.model.set_filename(index, "{}-headset{}".format(name, index) )
         if self.model.is_recording():
             self.model.stop_recording()
             self.view.b_toggle_recording.config( text ='Start recording')
@@ -611,7 +612,7 @@ class ApplicationController( Observer ):
             self.view.b_toggle_recording.config( text ='Stop recording' )
             self.logger.log(logging.INFO, (__file__, ": applicationcontroller.py: Start recording: ", time))
             self.model.blackboard.put_data(PatternStrings.MARKERS, Markers.REC_START, time)
-            self.model.set_foldername()
+            self.model.set_foldername(name)
         
     def ask_quit( self ):
         """ 
